@@ -11,7 +11,7 @@ Follow the link https://github.com/ajayalag1974/inplay/raw/main/inplay.user.js
 
 in the window that opens, click Install
 
-**Stage 3 (Restart the browser and log into the inplayip.tv website)**
+**Step 3 (Restart the browser and log into the inplayip.tv website)**
 
 After installing the script, restart the browser and log in to the inplay website, the video will be shown without delay.
 
