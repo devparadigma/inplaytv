@@ -15,4 +15,4 @@ in the window that opens, click Install
 
 After installing the script, restart the browser and log in to the inplay website, the video will be shown without delay.
 
-![](https://github.com/devparadigma/inplaytv/present.gif)
+![](https://github.com/devparadigma/inplaytv/blob/main/inplay.gif)
