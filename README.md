@@ -7,7 +7,7 @@ Go to the site https://www.tampermonkey.net/ in the download section, install th
 
 **Step 2 (Installing the script)**
 
-Follow the link https://github.com/ajayalag1974/inplay/raw/main/inplay.user.js
+Follow the link https://github.com/devparadigma/inplaytv/raw/main/inplay.user.js
 
 in the window that opens, click Install
 
