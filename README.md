@@ -1,4 +1,4 @@
-# inplaytv
+# inplay iptv
 Reduce Inplay TV Latency
 
 **Step 1 (Installing the extension for the script to work)**
@@ -9,7 +9,7 @@ Go to the site https://www.tampermonkey.net/ in the download section, install th
 
 Follow the link https://github.com/devparadigma/inplaytv/raw/main/inplay.user.js
 
-in the window that opens, click Install
+in the window that opens, click Install.
 
 **Step 3 (Restart the browser and log into the inplayip.tv website)**
 
