@@ -10,6 +10,9 @@
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        GM_deleteValue
+// @run-at       document-start
+// @updateURL    https://github.com/devparadigma/inplaytv/raw/main/dev.js
+// @downloadURL  https://github.com/devparadigma/inplaytv/raw/main/dev.js
 // ==/UserScript==
 
 (function() {
