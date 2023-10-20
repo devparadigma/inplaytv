@@ -14,7 +14,7 @@
     
     // Получаем текущую дату и форматируем ее в необходимый формат (YYYY-MM-DD)
     const today = new Date();
-    const searchDate = today.toISOString().split('T')[0];
+    const searchDate = today.toISOString();
     
     // Создаем JSON объект с параметрами для запроса
     const requestData = {
