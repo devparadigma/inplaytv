@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name         Post Request and Save Result
 // @namespace    inplayipTVPostRequest
-// @version      1.0
+// @version      2.0
 // @description  Save Results
 // @author       DevParadigma
 // @match        https://inplayip.tv/*
