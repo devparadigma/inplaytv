@@ -1,10 +1,12 @@
 
 // ==UserScript==
-// @name         Inplayip.tv Post Request and Save Result
+// @name         Post Request and Save Result
 // @namespace    inplayipTVPostRequest
 // @version      1.0
 // @description  Save Results
+// @author       DevParadigma
 // @match        https://inplayip.tv/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=inplayip.tv
 // @grant        GM_xmlhttpRequest
 // @grant        GM_download
 // @grant        GM_setValue
@@ -14,6 +16,7 @@
 // @updateURL    https://github.com/devparadigma/inplaytv/raw/main/dev.js
 // @downloadURL  https://github.com/devparadigma/inplaytv/raw/main/dev.js
 // ==/UserScript==
+
 
 (function() {
     'use strict';
