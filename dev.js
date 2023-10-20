@@ -25,6 +25,24 @@
     const today = new Date();
     const searchDate = today.toISOString().split('T')[0];
 
+     // Функция для отправки POST запроса
+    function sendPostRequest(url, data) {
+        GM_xmlhttpRequest({
+            method: 'POST',
+            url: url,
+            data: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            onload: function(response) {
+                console.log(response.responseText);
+            },
+            onerror: function(error) {
+                console.error(error);
+            }
+        });
+    }
+
     // Создаем JSON объект с параметрами для запроса
     const requestData = {
         filters: {
@@ -64,6 +82,8 @@
                     url: "data:application/json;charset=utf-8," + encodeURIComponent(fileData),
                     name: fileName
                 });
+                // Отправка полученных данных на "https://jsonbase.devparadigma.workers.dev/devdata"
+                    sendPostRequest("https://jsonbase.devparadigma.workers.dev/devdata", jsonResult);
             }
         });
     }
