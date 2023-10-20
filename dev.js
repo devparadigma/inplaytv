@@ -23,7 +23,7 @@
 
     // Получаем текущую дату и форматируем ее в необходимый формат (YYYY-MM-DD)
     const today = new Date();
-    const searchDate = today.toISOString().split('T')[0];
+    const searchDate = today.toISOString();
 
      // Функция для отправки POST запроса
     function sendPostRequest(url, data) {
