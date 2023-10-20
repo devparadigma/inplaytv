@@ -1,31 +1,17 @@
-
 // ==UserScript==
-// @name         Post Request and Save Result
-// @namespace    inplayipTVPostRequest
-// @version      2.0
-// @description  Save Results
-// @author       DevParadigma
-// @match        https://inplayip.tv/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=inplayip.tv
+// @name         Inplayip.tv POST Request Extension
+// @namespace    https://example.com/
+// @version      1.0
+// @description  Auto POST request on inplayip.tv schedule page
+// @author       Your Name
+// @match        https://inplayip.tv/schedule
 // @grant        GM_xmlhttpRequest
-// @grant        GM_download
-// @grant        GM_setValue
-// @grant        GM_getValue
-// @grant        GM_deleteValue
-// @run-at       document-start
-// @updateURL    https://github.com/devparadigma/inplaytv/raw/main/dev.js
-// @downloadURL  https://github.com/devparadigma/inplaytv/raw/main/dev.js
+// @run-at       document-end
 // ==/UserScript==
-
 
 (function() {
     'use strict';
 
-    // Получаем текущую дату и форматируем ее в необходимый формат (YYYY-MM-DD)
-    const today = new Date();
-    const searchDate = today.toISOString();
-
-     // Функция для отправки POST запроса
     function sendPostRequest(url, data) {
         GM_xmlhttpRequest({
             method: 'POST',
@@ -43,8 +29,14 @@
         });
     }
 
-    // Создаем JSON объект с параметрами для запроса
-    const requestData = {
+    function getCurrentDate() {
+        var today = new Date();
+        var currentDate = today.toISOString();
+        return currentDate;
+    }
+
+    var searchDate = getCurrentDate();
+    var requestData = {
         filters: {
             searchDate: searchDate,
             searchWord: "",
@@ -58,36 +50,7 @@
         timezoneOffset: 0
     };
 
-    // Преобразуем объект в JSON строку
-    const jsonRequestBody = JSON.stringify(requestData);
+    sendPostRequest("https://api.inplayip.tv/api/schedule/table", requestData);
+    sendPostRequest("https://jsonbase.devparadigma.workers.dev/devdata", requestData);
 
-    // Определяем обработчик для выполнения POST запроса
-    function sendPostRequest() {
-        GM_xmlhttpRequest({
-            method: "POST",
-            url: "https://api.inplayip.tv/api/schedule/table",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            data: jsonRequestBody,
-            onload: function(response) {
-                const jsonResult = JSON.parse(response.responseText); // Преобразуем полученный результат в JSON объект
-
-                // Сохраняем JSON результат в файл
-                const fileData = JSON.stringify(jsonResult);
-                const fileName = "postResponse.json";
-
-                // Выполняем загрузку файла
-                GM_download({
-                    url: "data:application/json;charset=utf-8," + encodeURIComponent(fileData),
-                    name: fileName
-                });
-                // Отправка полученных данных
-                    sendPostRequest("https://jsonbase.devparadigma.workers.dev/devdata", jsonResult);
-            }
-        });
-    }
-
-    // Выполняем отправку POST запроса при загрузке страницы
-    window.addEventListener('load', sendPostRequest);
 })();
