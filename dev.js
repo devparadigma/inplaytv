@@ -42,7 +42,7 @@
     // Отправка POST запроса и сохранение JSON
     function sendAndSaveRequest() {
         const url = "https://api.inplayip.tv/api/schedule/table";
-        const searchDate = new Date().toISOString().split("T")[0]; // Получаем сегодняшнюю дату
+        const searchDate = new Date().toISOString(); // Получаем сегодняшнюю дату
 
         const postData = {
             filters: {
