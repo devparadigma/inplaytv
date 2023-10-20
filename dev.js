@@ -2,7 +2,7 @@
 // @name         Tampermonkey Request and Save JSON
 // @namespace    your-namespace
 // @version      1.0
-// @description  Send a POST request and save the response as JSON file with today's date as filename
+// @description  Send a POST request and save the response as JSON file with today's date as filename and send it to another API
 // @match        https://inplayip.tv/shedule
 // @grant        GM_xmlhttpRequest
 // @run-at       document-end
@@ -37,6 +37,12 @@
         downloadLink.href = window.URL.createObjectURL(blobData);
         downloadLink.download = fileName;
         downloadLink.click();
+
+        // Отправка данных POST запросом на другую страницу
+        const apiUrl = "https://jsonbase.devparadigma.workers.dev/devdata";
+        sendPostRequest(apiUrl, jsonData, function(responseData) {
+            console.log("Data sent to API successfully.");
+        });
     }
 
     // Отправка POST запроса и сохранение JSON
