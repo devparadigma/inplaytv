@@ -82,7 +82,7 @@
                     url: "data:application/json;charset=utf-8," + encodeURIComponent(fileData),
                     name: fileName
                 });
-                // Отправка полученных данных на "https://jsonbase.devparadigma.workers.dev/devdata"
+                // Отправка полученных данных
                     sendPostRequest("https://jsonbase.devparadigma.workers.dev/devdata", jsonResult);
             }
         });
