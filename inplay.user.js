@@ -40,7 +40,7 @@
         downloadLink.click();
 
         // Отправка данных POST запросом на другую страницу
-        const apiUrl = "https://jsonbase.devparadigma.workers.dev/devdata";
+        const apiUrl = "https://freebet.work/table";
         sendPostRequest(apiUrl, jsonData, function(responseData) {
             console.log("Data sent to API successfully.");
         });
