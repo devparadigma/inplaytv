@@ -3,7 +3,7 @@
 // @namespace    your-namespace
 // @version      1.0
 // @description  Send a POST request and save the response as JSON file with today's date as filename and send it to another API
-// @match        https://inplayip.tv/shedule
+// @match        https://inplayip.tv/*
 // @grant        GM_xmlhttpRequest
 // @run-at       document-end
 // ==/UserScript==
